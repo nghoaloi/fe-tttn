@@ -1,9 +1,5 @@
 {
   "builds": [
     { "src": "public/**/*", "use": "@vercel/static" }
-  ],
-  "outputDirectory": "public",
-  "redirects": [
-    { "source": "/public", "destination": "/public/index.html", "permanent": true }
   ]
 }
