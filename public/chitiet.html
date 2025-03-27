@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Tin Tức</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="mb-3" id="article-title">Tiêu Đề Bài Viết</h1>
+                <p class="text-muted" id="article-date">Ngày đăng: 01/01/2023</p>
+                <img id="article-image" src="../src/images/anhtin1.webp" class="img-fluid mb-4" alt="Tiêu Đề Bài Viết">
+                <p id="article-content">
+                    Đây là nội dung chi tiết của bài viết. Nội dung này sẽ được thay thế bằng dữ liệu thực tế từ cơ sở dữ liệu hoặc API.
+                </p>
+                <p class="text-right font-italic" id="article-author">Tác giả: Nguyễn Văn A</p>
+            </div>
+        </div>
+
+        <!-- Comment Section -->
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h3>Khu Bình Luận</h3>
+                <form id="comment-form" class="mb-4">
+                    <div class="form-group">
+                        <label for="comment-name">Tên của bạn</label>
+                        <input type="text" class="form-control" id="comment-name" placeholder="Nhập tên của bạn" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-content">Bình luận</label>
+                        <textarea class="form-control" id="comment-content" rows="3" placeholder="Nhập bình luận của bạn" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gửi Bình Luận</button>
+                </form>
+                <div id="comments-list">
+                    <!-- Sample Comments -->
+                    <div class="border p-3 mb-3">
+                        <h5>Nguyễn Văn B <small class="text-muted">01/01/2023 10:00 AM</small></h5>
+                        <p>Bài viết rất hay và hữu ích. Cảm ơn tác giả!</p>
+                    </div>
+                    <div class="border p-3 mb-3">
+                        <h5>Trần Thị C <small class="text-muted">01/01/2023 11:30 AM</small></h5>
+                        <p>Mình rất thích bài viết này. Mong chờ thêm nhiều bài viết khác từ bạn.</p>
+                    </div>
+                    <div class="border p-3 mb-3">
+                        <h5>Lê Văn D <small class="text-muted">01/01/2023 01:15 PM</small></h5>
+                        <p>Thông tin rất hữu ích, cảm ơn bạn đã chia sẻ!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#header-placeholder").load("header.html");
+            $("#footer-placeholder").load("footer.html");
+
+            // Example data for the article
+            const article = {
+                title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan",
+                date: "01/01/2023",
+                image: "../src/images/anhtin1.webp",
+                content: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch thoái vốn. Đây là một động thái quan trọng trong chiến lược đầu tư của tập đoàn này.",
+                author: "Nguyễn Văn A"
+            };
+
+            // Populate the article details
+            $("#article-title").text(article.title);
+            $("#article-date").text(`Ngày đăng: ${article.date}`);
+            $("#article-image").attr("src", article.image).attr("alt", article.title);
+            $("#article-content").text(article.content);
+            $("#article-author").text(`Tác giả: ${article.author}`);
+
+            // Handle comment submission
+            $("#comment-form").submit(function(e) {
+                e.preventDefault();
+                const name = $("#comment-name").val();
+                const content = $("#comment-content").val();
+                const currentDate = new Date().toLocaleString("vi-VN");
+
+                if (name && content) {
+                    const commentHtml = `
+                        <div class="border p-3 mb-3">
+                            <h5>${name} <small class="text-muted">${currentDate}</small></h5>
+                            <p>${content}</p>
+                        </div>
+                    `;
+                    $("#comments-list").append(commentHtml);
+                    $("#comment-form")[0].reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

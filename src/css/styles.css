@@ -1,0 +1,8 @@
+body {
+    padding-top: 56px; /* Adjust based on the height of the header */
+}
+
+#login-btn:hover {
+    background-color: #007bff;
+    color: white;
+}

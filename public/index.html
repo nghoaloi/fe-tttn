@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tin Tức 21</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../src/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Danh Mục -->
+    <div class="bg-light py-2">
+        <div class="container">
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link" href="#">Thể Thao</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Giải Trí</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Công Nghệ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sức Khỏe</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div id="news-container" class="row">
+            <!-- mấy cái tin tức ở dưới -->
+        </div>
+        <!-- Pagination -->
+        <nav>
+            <ul class="pagination justify-content-center" id="pagination">
+                <!-- Pagination buttons will be dynamically generated -->
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#header-placeholder").load("header.html");
+            $("#footer-placeholder").load("footer.html");
+
+            // Sample data for articles
+            const articles = [
+                { 
+                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
+                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
+                    image: "../src/images/anhtin1.webp" 
+                },
+                { 
+                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
+                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
+                    image: "../src/images/anhtin1.webp" 
+                },
+                { 
+                    title: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
+                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
+                    image: "../src/images/anhtin1.webp" 
+                },
+                { 
+                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
+                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
+                    image: "../src/images/anhtin1.webp" 
+                },
+                { 
+                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
+                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
+                    image: "../src/images/anhtin1.webp" 
+                },
+                { 
+                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
+                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
+                    image: "../src/images/anhtin1.webp" 
+                },
+                { 
+                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
+                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
+                    image: "../src/images/anhtin1.webp" 
+                }
+            ];
+
+            const itemsPerPage = 5;
+            let currentPage = 1;
+
+            function renderArticles(page) {
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const paginatedArticles = articles.slice(start, end);
+
+                const newsContainer = $("#news-container");
+                newsContainer.empty();
+
+                paginatedArticles.forEach(article => {
+                    newsContainer.append(`
+                        <div class="col-md-12 mb-4">
+                            <div class="card d-flex flex-row">
+                                <a href="chitiet.html">
+                                    <img src="${article.image}" class="card-img-left" alt="${article.title}" style="width: 150px; height: auto;">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a href="chitiet.html">${article.title}</a>
+                                    </h5>
+                                    <p class="card-text">${article.summary}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+            }
+
+            function renderPagination() {
+                const totalPages = Math.ceil(articles.length / itemsPerPage);
+                const pagination = $("#pagination");
+                pagination.empty();
+
+                for (let i = 1; i <= totalPages; i++) {
+                    pagination.append(`
+                        <li class="page-item ${i === currentPage ? 'active' : ''}">
+                            <a class="page-link" href="#">${i}</a>
+                        </li>
+                    `);
+                }
+
+                $(".page-link").click(function(e) {
+                    e.preventDefault();
+                    currentPage = parseInt($(this).text());
+                    renderArticles(currentPage);
+                    renderPagination();
+                });
+            }
+
+            renderArticles(currentPage);
+            renderPagination();
+        });
+    </script>
+</body>
+</html>
