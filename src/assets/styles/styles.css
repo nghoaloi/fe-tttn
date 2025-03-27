@@ -2,3 +2,7 @@
     background-color: #007bff;
     color: white;
 }
+
+body {
+    margin-top: 70px; /* Adjust this value based on the height of your fixed header */
+}
