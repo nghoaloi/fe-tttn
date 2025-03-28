@@ -70,21 +70,34 @@
             $("#header-placeholder").load("header.html");
             $("#footer-placeholder").load("footer.html");
 
-            // Example data for the article
-            const article = {
-                title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan",
-                date: "01/01/2023",
-                image: "https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw", // Updated path
-                content: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch thoái vốn. Đây là một động thái quan trọng trong chiến lược đầu tư của tập đoàn này.",
-                author: "Nguyễn Văn A"
-            };
+            // Function to get query parameters from the URL
+            function getQueryParam(param) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
 
-            // Populate the article details
-            $("#article-title").text(article.title);
-            $("#article-date").text(`Ngày đăng: ${article.date}`);
-            $("#article-image").attr("src", article.image).attr("alt", article.title);
-            $("#article-content").text(article.content);
-            $("#article-author").text(`Tác giả: ${article.author}`);
+            const idTin = getQueryParam("idTin"); // Extract idTin from the URL
+            const apiUrl = `http://nguyenquocdai-001-site1.ltempurl.com/api/tin/nhomtin/${idTin}`;
+
+            // Fetch article data from the API
+            $.getJSON(apiUrl, function(data) {
+                if (data && data.length > 0) {
+                    const article = data[0]; // Assuming the API returns an array with one object
+                    $("#article-title").text(article.tieuDe || "No Title");
+                    $("#article-date").text(`Ngày đăng: ${article.ngayDangTin || "N/A"}`);
+                    $("#article-image").attr("src", article.hinhDaiDien || "https://via.placeholder.com/150").attr("alt", article.tieuDe || "No Title");
+                    $("#article-content").text(article.moTa || "No Content");
+                    $("#article-author").html(`
+                        <span class="float-left">Số lần xem: ${article.soLanXem || 0}</span>
+                        <span class="float-right">Tác giả: ${article.tacGia || "N/A"}</span>
+                    `);
+                } else {
+                    alert("Không tìm thấy bài viết!");
+                }
+            }).fail(function() {
+                console.error("Failed to fetch article data.");
+                alert("Không thể tải dữ liệu bài viết!");
+            });
 
             // Handle comment submission
             $("#comment-form").submit(function(e) {

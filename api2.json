@@ -1,0 +1,90 @@
+[
+    {
+      "idNhomTin": 1,
+      "tenNhomTin": "Thể thao",
+      "loaiTin": [
+        {
+          "idLoaiTin": "TT01",
+          "tenLoaiTin": "Bóng Đá"
+        },
+        {
+          "idLoaiTin": "TT02",
+          "tenLoaiTin": "Tennis"
+        }
+      ]
+    },
+    {
+      "idNhomTin": 2,
+      "tenNhomTin": "Giải trí",
+      "loaiTin": [
+        {
+          "idLoaiTin": "GT01",
+          "tenLoaiTin": "Phim Ảnh"
+        },
+        {
+          "idLoaiTin": "GT02",
+          "tenLoaiTin": "Âm Nhạc"
+        }
+      ]
+    },
+    {
+      "idNhomTin": 3,
+      "tenNhomTin": "Công nghệ",
+      "loaiTin": [
+        {
+          "idLoaiTin": "CN01",
+          "tenLoaiTin": "AI và Công Nghệ"
+        }
+      ]
+    },
+    {
+      "idNhomTin": 4,
+      "tenNhomTin": "Sức khỏe",
+      "loaiTin": [
+        {
+          "idLoaiTin": "SK01",
+          "tenLoaiTin": "Dinh Dưỡng"
+        }
+      ]
+    },
+    {
+      "idNhomTin": 5,
+      "tenNhomTin": "Pháp luật",
+      "loaiTin": [
+        {
+          "idLoaiTin": "PL01",
+          "tenLoaiTin": "Luật Hình Sự"
+        }
+      ]
+    },
+    {
+      "idNhomTin": 6,
+      "tenNhomTin": "Đời sống",
+      "loaiTin": [
+        {
+          "idLoaiTin": "DS01",
+          "tenLoaiTin": "Gia Đình"
+        }
+      ]
+    },
+    {
+      "idNhomTin": 7,
+      "tenNhomTin": "Giáo dục",
+      "loaiTin": [
+        {
+          "idLoaiTin": "GD01",
+          "tenLoaiTin": "Đại Học"
+        }
+      ]
+    },
+    {
+      "idNhomTin": 8,
+      "tenNhomTin": "Kinh tế",
+      "loaiTin": [
+        {
+          "idLoaiTin": "KT01",
+          "tenLoaiTin": "Tài Chính"
+        }
+      ]
+    }
+  ]

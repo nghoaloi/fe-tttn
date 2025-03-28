@@ -1,0 +1,90 @@
+[
+    {
+      "idTin": 1,
+      "tieuDe": "Ronaldo ghi bàn giúp đội nhà chiến thắng",
+      "hinhDaiDien": "https://i1-thethao.vnecdn.net/2021/10/22/ronaldo-ap-1634893598-8642-1634894575.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=JbLicTNedDWJP70DIQbGxg",
+      "moTa": "CR7 lại lập công, giúp đội nhà giành chiến thắng quan trọng trong giải đấu.",
+      "ngayDangTin": "2025-03-27T00:00:00",
+      "tacGia": "Nguyễn Văn A",
+      "soLanXem": 150,
+      "tinHot": 1,
+      "idLoaiTin": "TT01"
+    },
+    {
+      "idTin": 2,
+      "tieuDe": "Phim bom tấn mới ra mắt, phá vỡ mọi kỷ lục phòng vé",
+      "hinhDaiDien": "https://kenh14cdn.com/2019/12/27/1501478268178-0-0-399-640-crop-1501478271896-1577391950887590833226.jpg",
+      "moTa": "Bộ phim được mong đợi nhất năm nay đã tạo nên cơn sốt phòng vé.",
+      "ngayDangTin": "2025-03-26T00:00:00",
+      "tacGia": "Trần Văn B",
+      "soLanXem": 200,
+      "tinHot": 1,
+      "idLoaiTin": "GT01"
+    },
+    {
+      "idTin": 3,
+      "tieuDe": "Công nghệ AI đang thay đổi thế giới như thế nào?",
+      "hinhDaiDien": "https://teky.edu.vn/blog/wp-content/uploads/2021/08/Cong-nghe-Ai-la-gi.jpg",
+      "moTa": "AI không còn là tương lai, nó đã trở thành hiện tại, ứng dụng mạnh mẽ trong mọi lĩnh vực.",
+      "ngayDangTin": "2025-03-25T00:00:00",
+      "tacGia": "Lê Văn C",
+      "soLanXem": 300,
+      "tinHot": 1,
+      "idLoaiTin": "CN01"
+    },
+    {
+      "idTin": 4,
+      "tieuDe": "Chế độ dinh dưỡng lành mạnh giúp kéo dài tuổi thọ",
+      "hinhDaiDien": "https://cdn.nhathuoclongchau.com.vn/unsafe/800x0/https://cms-prod.s3-sgn09.fptcloud.com/dinh_duong_la_gi_va_cac_chat_dinh_duong_co_vai_tro_nhu_the_nao_1_738be126a6.jpg",
+      "moTa": "Ăn uống khoa học không chỉ giúp duy trì sức khỏe mà còn giúp bạn sống thọ hơn.",
+      "ngayDangTin": "2025-03-24T00:00:00",
+      "tacGia": "Hoàng Thị D",
+      "soLanXem": 180,
+      "tinHot": 0,
+      "idLoaiTin": "SK01"
+    },
+    {
+      "idTin": 5,
+      "tieuDe": "Luật hình sự mới: Những thay đổi quan trọng bạn cần biết",
+      "hinhDaiDien": "https://cdn.thuvienphapluat.vn//uploads/Hoidapphapluat/2023/PVHM/Thang12/20231214/BO-LUAT-HS.jpg",
+      "moTa": "Luật hình sự vừa được cập nhật với nhiều điểm mới liên quan đến hình phạt.",
+      "ngayDangTin": "2025-03-23T00:00:00",
+      "tacGia": "Vũ Minh E",
+      "soLanXem": 50,
+      "tinHot": 0,
+      "idLoaiTin": "PL01"
+    },
+    {
+      "idTin": 6,
+      "tieuDe": "Giáo dục hiện đại: Công nghệ giúp học sinh học tốt hơn?",
+      "hinhDaiDien": "https://edubit.vn/data/blog/photo_1649299718.jpg?v=1649299718",
+      "moTa": "Ứng dụng công nghệ vào giáo dục ngày càng phổ biến, giúp học sinh tiếp cận kiến thức dễ dàng hơn.",
+      "ngayDangTin": "2025-03-22T00:00:00",
+      "tacGia": "Phạm Văn G",
+      "soLanXem": 120,
+      "tinHot": 1,
+      "idLoaiTin": "GD01"
+    },
+    {
+      "idTin": 7,
+      "tieuDe": "Kinh tế toàn cầu chịu ảnh hưởng từ lạm phát",
+      "hinhDaiDien": "https://vinuni.edu.vn/wp-content/uploads/2024/12/phan-biet-tang-truong-kinh-te-va-phat-trien-kinh-te-1.jpg",
+      "moTa": "Lạm phát gia tăng đang ảnh hưởng đến nền kinh tế toàn cầu, gây lo ngại cho nhiều quốc gia.",
+      "ngayDangTin": "2025-03-21T00:00:00",
+      "tacGia": "Lý Thị H",
+      "soLanXem": 250,
+      "tinHot": 1,
+      "idLoaiTin": "KT01"
+    },
+    {
+      "idTin": 8,
+      "tieuDe": "Sự thay đổi khí hậu ảnh hưởng đến đời sống con người",
+      "hinhDaiDien": "https://pantrading.vn/Data/Sites/1/media/bien-doi-khi-hau-la-gi-1.jpg",
+      "moTa": "Thời tiết cực đoan ngày càng phổ biến, gây thiệt hại lớn về kinh tế và môi trường.",
+      "ngayDangTin": "2025-03-20T00:00:00",
+      "tacGia": "Đặng Minh I",
+      "soLanXem": 320,
+      "tinHot": 1,
+      "idLoaiTin": "DS01"
+    }
+  ]

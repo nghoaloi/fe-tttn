@@ -15,10 +15,7 @@
     <div class="bg-light py-2">
         <div class="container">
             <ul class="nav justify-content-center">
-                <li class="nav-item"><a class="nav-link" href="#">Thể Thao</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Giải Trí</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Công Nghệ</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Sức Khỏe</a></li>
+                <!-- cái danh mục -->
             </ul>
         </div>
     </div>
@@ -28,7 +25,7 @@
         <div id="news-container" class="row">
             <!-- mấy cái tin tức ở dưới -->
         </div>
-        <!-- Pagination -->
+        <!-- pagination -->
         <nav>
             <ul class="pagination justify-content-center" id="pagination">
                 <!-- Pagination buttons will be dynamically generated -->
@@ -42,54 +39,38 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <script>
         $(document).ready(function(){
             $("#header-placeholder").load("header.html");
             $("#footer-placeholder").load("footer.html");
 
-            // Sample data for articles
-            const articles = [
-                { 
-                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
-                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
-                    image: "https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw" // Updated path
-                },
-                { 
-                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
-                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
-                    image: "https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw" // Updated path
-                },
-                { 
-                    title: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
-                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
-                    image: "https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw" // Updated path
-                },
-                { 
-                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
-                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
-                    image: "https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw" // Updated path
-                },
-                { 
-                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
-                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
-                    image: "https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw" // Updated path
-                },
-                { 
-                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
-                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
-                    image: "https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw" // Updated path
-                },
-                { 
-                    title: "SK Group Hàn Quốc sẽ thoái sạch vốn khỏi Vingroup và Masan", 
-                    summary: "SK Group, chaebol lớn thứ ba Hàn Quốc, không còn ghi nhận sở hữu tại Vingroup và Masan vì đã lên kế hoạch ... ", 
-                    image: "https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw" // Updated path
-                }
-            ];
+            const apiUrl = "http://nguyenquocdai-001-site1.ltempurl.com/api/tin/danhsach";
+            const menuApiUrl = "http://nguyenquocdai-001-site1.ltempurl.com/api/tin/menu";
+            const loaiTinApiUrl = "http://nguyenquocdai-001-site1.ltempurl.com/api/tin/loaitin/";
 
-            const itemsPerPage = 5;
-            let currentPage = 1;
+            function renderMenu(categories) {
+                const menuContainer = $(".nav.justify-content-center");
+                menuContainer.empty(); // Clear existing menu items
 
-            function renderArticles(page) {
+                categories.forEach(category => {
+                    menuContainer.append(`
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-id-nhom-tin="${category.idNhomTin}">${category.tenNhomTin}</a>
+                        </li>
+                    `);
+                });
+
+                // Add click event to menu items
+                $(".nav-link").click(function(e) {
+                    e.preventDefault();
+                    const idNhomTin = $(this).data("id-nhom-tin");
+                    fetchArticlesByCategory(idNhomTin);
+                });
+            }
+
+            function renderArticles(articles, page) {
+                const itemsPerPage = 5;
                 const start = (page - 1) * itemsPerPage;
                 const end = start + itemsPerPage;
                 const paginatedArticles = articles.slice(start, end);
@@ -101,14 +82,14 @@
                     newsContainer.append(`
                         <div class="col-md-12 mb-4">
                             <div class="card d-flex flex-row">
-                                <a href="chitiet.html">
-                                    <img src="https://i1-kinhdoanh.vnecdn.net/2025/03/25/Samsung-SEHC-1742902388-5786-1742902457.png?w=680&h=0&q=100&dpr=1&fit=crop&s=fLM5capf53oL_Qx49oO0gw" class="card-img-left" alt="${article.title}" style="width: 150px; height: auto;">
+                                <a href="chitiet.html?idTin=${article.idTin || ''}">
+                                    <img src="${article.hinhDaiDien || 'https://via.placeholder.com/150'}" class="card-img-left" alt="${article.tieuDe || 'No Title'}" style="width: 150px; height: auto;">
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        <a href="chitiet.html">${article.title}</a>
+                                        <a href="chitiet.html?idTin=${article.idTin || ''}">${article.tieuDe || 'No Title'}</a>
                                     </h5>
-                                    <p class="card-text">${article.summary}</p>
+                                    <p class="card-text">${article.moTa || 'No Description'}</p>
                                 </div>
                             </div>
                         </div>
@@ -116,8 +97,9 @@
                 });
             }
 
-            function renderPagination() {
-                const totalPages = Math.ceil(articles.length / itemsPerPage);
+            function renderPagination(totalArticles, currentPage) {
+                const itemsPerPage = 5;
+                const totalPages = Math.ceil(totalArticles / itemsPerPage);
                 const pagination = $("#pagination");
                 pagination.empty();
 
@@ -131,14 +113,52 @@
 
                 $(".page-link").click(function(e) {
                     e.preventDefault();
-                    currentPage = parseInt($(this).text());
-                    renderArticles(currentPage);
-                    renderPagination();
+                    const page = parseInt($(this).text());
+                    renderArticles(window.filteredArticles, page);
+                    renderPagination(window.filteredArticles.length, page);
                 });
             }
 
-            renderArticles(currentPage);
-            renderPagination();
+            function fetchArticlesByCategory(idNhomTin) {
+                $.getJSON(menuApiUrl, function(categories) {
+                    const category = categories.find(cat => cat.idNhomTin === idNhomTin);
+                    if (category) {
+                        const idLoaiTinList = category.loaiTin.map(loai => loai.idLoaiTin);
+                        const articlePromises = idLoaiTinList.map(idLoaiTin => $.getJSON(`${loaiTinApiUrl}${idLoaiTin}`));
+
+                        // Fetch all articles for the category
+                        Promise.all(articlePromises)
+                            .then(results => {
+                                const combinedArticles = results.flat(); // Combine all articles into one array
+                                window.filteredArticles = combinedArticles; // Store filtered articles globally
+                                renderArticles(combinedArticles, 1);
+                                renderPagination(combinedArticles.length, 1);
+                            })
+                            .catch(error => {
+                                console.error("Failed to fetch articles for category:", error);
+                            });
+                    }
+                }).fail(function() {
+                    console.error("Failed to fetch menu categories.");
+                });
+            }
+
+            // Fetch menu categories from the API
+            $.getJSON(menuApiUrl, function(data) {
+                renderMenu(data); // Populate the menu dynamically
+            }).fail(function() {
+                console.error("Failed to fetch menu categories.");
+            });
+
+            // Fetch all articles initially
+            $.getJSON(apiUrl, function(data) {
+                window.articles = data; // Store articles globally
+                window.filteredArticles = data; // Initially, all articles are displayed
+                renderArticles(data, 1);
+                renderPagination(data.length, 1);
+            }).fail(function() {
+                console.error("Failed to fetch articles from the API.");
+            });
         });
     </script>
 </body>
